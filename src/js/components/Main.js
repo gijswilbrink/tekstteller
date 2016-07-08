@@ -22,7 +22,7 @@ const Main = React.createClass({
 		return (
 			<section className="textcounter">
 				<InputForm recalculate={this.props.recalculate} />
-				<Results />
+				<Results {...this.props} />
 			</section>
 		);
 	}

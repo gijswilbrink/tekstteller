@@ -14,9 +14,7 @@ import Main from './Main';
  * Apply state and actions to Main component
  */
 function mapStateToProps(state) {
-	return {
-		posts: state.posts
-	}
+	return state;
 }
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators(actionCreators, dispatch);
