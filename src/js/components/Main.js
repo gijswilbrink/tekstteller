@@ -2,7 +2,12 @@
  * Import framework
  */
 import React from 'react';
-import { Link } from 'react-router';
+
+/**
+ * Import components
+ */
+import InputForm from './InputForm';
+import Results from './Results';
 
 /**
  * Component: Main
@@ -11,7 +16,10 @@ import { Link } from 'react-router';
 const Main = React.createClass({
 	render() {
 		return (
-			<div>Let's get this party started</div>
+			<section className="textcounter">
+				<InputForm />
+				<Results />
+			</section>
 		);
 	}
 });
