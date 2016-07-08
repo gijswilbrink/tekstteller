@@ -13,10 +13,15 @@ function characters(state = [], action) {
 		// Recalculate the amount of vowels and consonants
 		case 'RECALCULATE':
 			// reset counts
-			var characters = {...state};
-			characters.iVowels = 0;
-			characters.iConsonants = 0;
-
+			var characters = {
+				iVowelCount: 0,
+				aVowels: [],
+				aTopVowels: [],
+				iConsonantCount: 0,
+				aConsonants: [],
+				aTopConsonants: []
+			}
+			
 			// init text
 			var text = action.text;
 
@@ -31,21 +36,57 @@ function characters(state = [], action) {
 
   				// check if character is a vowel
   				if(isVowel(char)) {
-  					characters.iVowels++;
+  					// increment vowel count
+  					characters.iVowelCount++;
+  					// add to vowels array and increment character count
+  					characters.aVowels[char] = characters.aVowels[char] + 1 || 1;
   				} 
 
-  				// no vowel? character is a consonant
+  				// no vowel? character is a consonant (we already know it's a letter, right?)
   				else {
-  					characters.iConsonants++;
+  					// increment vowel count
+  					characters.iConsonantCount++;
+
+  					// add to consonant array and increment character count
+  					characters.aConsonants[char] = characters.aConsonants[char] + 1 || 1;
   				}
 			}
 
-			// add vowel count to state
+			// Sort vowels and consonants by character count
+			characters.aTopVowels = getTopResults(characters.aVowels, 3);
+			characters.aTopConsonants = getTopResults(characters.aConsonants, 3);
+
+			// set new state
 			return characters;
 		
 		// Action wasn't meant for this reducer
 		default:
 			return state;
+	}
+
+	/**
+	 * Get the top n values of an associative array (object in js)
+	 */
+	function getTopResults(oObject, amount) {
+
+		// create new array with key and value as value
+		var sortedResults = [];
+		for (var key in oObject) {
+		      sortedResults.push([key, oObject[key]])
+		}
+
+		// sort the array (and reverse in the end for DESC sort)
+		sortedResults.sort(
+		    function(a, b) {
+		        return a[1] - b[1]
+		    }
+		).reverse();
+
+		// get the top n results (first n elements in array)
+		var topResults = sortedResults.slice(0, amount);
+
+		// return results
+		return topResults;
 	}
 
 	/**

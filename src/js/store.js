@@ -11,10 +11,12 @@ import rootReducer from './reducers/index';
  */
 const defaultState = {
 	characters: {
-		iConsonants: 0,
-		iVowels: 0,
-		topVowels: {},
-		topConsonants: {}
+		iVowelCount: 0,
+		aVowels: [],
+		aTopVowels: [],
+		iConsonantCount: 0,
+		aConsonants: [],
+		aTopConsonants: []
 	}
 };
 

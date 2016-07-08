@@ -10,19 +10,43 @@ import React from 'react';
 const Results = React.createClass({
 
 	/**
+	 * Render a top result
+	 */
+	renderTopResult(result) {
+		
+		// init
+		var character = result[0].toUpperCase();
+		var count = result[1];
+
+		// return jsx
+		return <li key={result}>{character}, used {count} times</li>;
+	},
+
+	/**
 	 * Render
 	 */
 	render() {
 		return (
 			<dl className="results">
-				  <dt>Number of vowels</dt>
-				  <dd>{this.props.characters.iVowels}</dd>
-				  <dt>Number of consonants</dt>
-				  <dd>{this.props.characters.iConsonants}</dd>
-				  <dt>Top 3 vowels</dt>
-				  <dd></dd>
-				  <dt>Top 3 consonants</dt>
-				  <dd></dd>
+				{/* Number of vowels */}
+				<dt>Number of vowels</dt>
+				<dd className="vowelCount">{this.props.characters.iVowelCount}</dd>
+
+				{/* Number of consonants */}
+				<dt>Number of consonants</dt>
+				<dd className="consonantCount">{this.props.characters.iConsonantCount}</dd>
+				
+				{/* Top 3 vowels */}
+				<dt>Top 3 vowels</dt>
+				<dd className="topVowels">
+					<ol className="topResults">{this.props.characters.aTopVowels.map(this.renderTopResult)}</ol>
+				</dd>
+				
+				{/* Top 3 consonants */}
+				<dt>Top 3 consonants</dt>
+				<dd classNAme="topConsonants">
+					<ol className="topResults">{this.props.characters.aTopConsonants.map(this.renderTopResult)}</ol>
+				</dd>
 			</dl>
 		);
 	}
