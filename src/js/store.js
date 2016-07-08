@@ -10,9 +10,12 @@ import rootReducer from './reducers/index';
  * Create default state
  */
 const defaultState = {
-	consonants: 0,
-	vowels: 0,
-	top3s: {}
+	characters: {
+		iConsonants: 0,
+		iVowels: 0,
+		topVowels: {},
+		topConsonants: {}
+	}
 };
 
 /**
