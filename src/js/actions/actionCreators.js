@@ -2,6 +2,6 @@
 export function recalculate(text) {
 	return {
 		type: 'RECALCULATE',
-		index
+		text
 	}
 }

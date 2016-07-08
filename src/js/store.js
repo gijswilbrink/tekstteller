@@ -6,12 +6,13 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import rootReducer from './reducers/index';
 
-
 /**
  * Create default state
  */
 const defaultState = {
-	
+	consonants: 0,
+	vowels: 0,
+	top3s: {}
 };
 
 /**

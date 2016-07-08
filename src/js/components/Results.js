@@ -8,6 +8,10 @@ import React from 'react';
  * Displays the text statistics
  */
 const Results = React.createClass({
+
+	/**
+	 * Render
+	 */
 	render() {
 		return (
 			<div className="results" />

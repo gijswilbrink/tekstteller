@@ -14,10 +14,14 @@ import Results from './Results';
  * Renders pages requested by the router
  */
 const Main = React.createClass({
+
+	/**
+	 * Render
+	 */
 	render() {
 		return (
 			<section className="textcounter">
-				<InputForm />
+				<InputForm recalculate={this.props.recalculate} />
 				<Results />
 			</section>
 		);
