@@ -7,7 +7,8 @@ import React from 'react';
  * Import components
  */
 import InputForm from './InputForm';
-import Results from './Results';
+import CharacterCount 	from './CharacterCount';
+import TopResults 		from './TopResults';
 
 /**
  * Component: Main
@@ -20,10 +21,13 @@ const Main = React.createClass({
 	 */
 	render() {
 		return (
-			<section className="textcounter">
+			<main className="textCounter">
 				<InputForm recalculate={this.props.recalculate} />
-				<Results {...this.props} />
-			</section>
+				<section className="results">
+					<CharacterCount {...this.props} />
+					<TopResults {...this.props} />
+				</section>
+			</main>
 		);
 	}
 });

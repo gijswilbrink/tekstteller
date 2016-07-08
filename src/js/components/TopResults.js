@@ -19,27 +19,36 @@ const TopResults = React.createClass({
 		var count = result[1];
 
 		// return jsx
-		return <li key={result}><span className="character">{character}</span>, used <span className="count">{count}</span> times</li>;
+		return <li key={result}><span className="character">{character}</span> <span className="amount">({count}&times; gebruikt)</span></li>;
 	},
 
 	/**
 	 * Render
 	 */
 	render() {
+		// no results
+		if(!this.props.characters.aTopVowels.length && !this.props.characters.aTopConsonants.length) {
+			return (<div />);
+		}
+
+		// results
 		return (
-			<dl className="topResults">
-				{/* Top 3 vowels */}
-				<dt>Top 3 vowels</dt>
-				<dd className="topVowels">
-					<ol>{this.props.characters.aTopVowels.map(this.renderTopResult)}</ol>
-				</dd>
-				
-				{/* Top 3 consonants */}
-				<dt>Top 3 consonants</dt>
-				<dd className="topConsonants">
-					<ol>{this.props.characters.aTopConsonants.map(this.renderTopResult)}</ol>
-				</dd>
-			</dl>
+			<div>
+				<h2>En hier nog wat meer statistieken</h2>
+				<div className="stats">
+					{/* Top 3 vowels */}
+					<div className="stat vowelCount">
+						<h2>Top 3 klinkers</h2>
+						<ol>{this.props.characters.aTopVowels.map(this.renderTopResult)}</ol>
+					</div>
+					
+					{/* Top 3 consonants */}
+					<div className="stat consonantCount">
+						<h2>Top 3 mede&shy;klin&shy;kers</h2>
+						<ol>{this.props.characters.aTopConsonants.map(this.renderTopResult)}</ol>
+					</div>
+				</div>
+			</div>
 		);
 	}
 });

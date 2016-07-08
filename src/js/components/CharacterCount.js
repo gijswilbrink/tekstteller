@@ -13,16 +13,30 @@ const CharacterCount = React.createClass({
 	 * Render
 	 */
 	render() {
-		return (
-			<dl className="characterCount">
-				{/* Number of vowels */}
-				<dt>Number of vowels</dt>
-				<dd className="vowelCount">{this.props.characters.iVowelCount}</dd>
 
-				{/* Number of consonants */}
-				<dt>Number of consonants</dt>
-				<dd className="consonantCount">{this.props.characters.iConsonantCount}</dd>
-			</dl>
+		// no results
+		if(!this.props.characters.iVowelCount && !this.props.characters.iConsonantCount) {
+			return (<div />);
+		}
+
+		// results
+		return (
+			<div>
+				<h2>Je typte...</h2>
+				<div className="stats">
+					{/* Number of vowels */}
+					<div className="stat vowelCount">
+						<span className="count">{this.props.characters.iVowelCount}</span>
+						<h3>Klinkers</h3>
+					</div>
+
+					{/* Number of consonants */}
+					<div className="stat consonantCount">
+						<span className="count">{this.props.characters.iConsonantCount}</span>
+						<h3>Medeklinkers</h3>
+					</div>
+				</div>
+			</div>
 		);
 	}
 });

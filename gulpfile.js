@@ -17,6 +17,7 @@ const sassGlob            = require('gulp-sass-glob-import');
 const urlAdjuster         = require('gulp-css-url-adjuster');
 const autoprefixer        = require('gulp-autoprefixer');
 const uglify              = require('gulp-uglify');
+const cleanCSS            = require('gulp-clean-css');
 const svgmin              = require('gulp-svgmin');
 const taskListing         = require('gulp-task-listing');
 const buffer              = require('vinyl-buffer');
@@ -161,10 +162,9 @@ gulp.task('build:styles', ['clean:styles'], function() {
     .pipe(autoprefixer({
       browsers: ['> 1%', 'last 3 versions']
     }))
-    .pipe(urlAdjuster({
-      prependRelative: '../img/',
-      append: '?version=' + Date.now()
-    }))
+    .pipe(gulp.dest(paths.styles.output))
+    .pipe(rename({ suffix: '.min' })) // add .min postfix
+    .pipe(cleanCSS())
     .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest(paths.styles.output))
     .pipe(browserSync.reload({stream:true}));
