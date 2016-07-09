@@ -1,17 +1,4 @@
 
-$font-name: "glyphicons-halflings-regular";
-@font-face {
-	font-family: 'Glyphicons Halflings';
-	src: url('../fonts/bootstrap/#{$font-name}.eot');
-	src: url('../fonts/bootstrap/#{$font-name}.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/bootstrap/#{$font-name}.woff2') format('woff2'),
-		 url('../fonts/bootstrap/#{$font-name}.woff') format('woff'),
-		 url('../fonts/bootstrap/#{$font-name}.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-
 @font-face {
     font-family: 'billabongregular';
     src: url('https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot');

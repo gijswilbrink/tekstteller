@@ -52,7 +52,7 @@
 			});
 
 			// assert that stats are shown after entering test
-			casper.test.begin('Test Top 3 resultalten', 12, function(test) {
+			casper.test.begin('Test Top 3 resultaten', 12, function(test) {
 				// function for testing Top 3 results
 				function TestTopResults(type, aResults) {
 					for(var i = 0; i < aResults.length; i++) {
