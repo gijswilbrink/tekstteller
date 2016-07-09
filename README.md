@@ -7,9 +7,11 @@ Je vindt een werkende versie op http://www.gijswilbrink.nl/tesktteller
 <pre>
 # Repos klonen
 git clone https://github.com/gijswilbrink/tekstteller.git
+
 # Voor de unit test zijn CasperJS PhantomJS nodig. Installeren met:
 sudo npm install -g phantomjs-prebuilt
 sudo npm install -g casperjs
+
 # Build versie bouwen
 gulp build
 </pre>
