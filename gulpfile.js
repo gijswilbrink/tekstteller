@@ -121,7 +121,9 @@ gulp.task('build:scripts', ['clean:scripts'], function() {
     transform:  [
       babelify.configure({
         presets: ["es2015", "react", "stage-0"]
-      })]
+      }),
+      ['envify', {'global': true, NODE_ENV: 'production'}]
+      ]
   };
       
   // run browserify for app.js
