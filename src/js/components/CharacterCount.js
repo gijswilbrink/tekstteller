@@ -13,11 +13,22 @@ const CharacterCount = React.createClass({
 	 * Render
 	 */
 	render() {
+		// init
+		var iVowels = this.props.characters.iVowelCount;
+		var iConsonants = this.props.characters.iConsonantCount;
 
 		// no results
-		if(!this.props.characters.iVowelCount && !this.props.characters.iConsonantCount) {
+		if(!iVowels && !iConsonants) {
 			return (<div />);
-		}
+		} 
+
+		// vowel label
+		var vowelLabel = 'Klinkers';
+		if(iVowels == 1) vowelLabel = 'Klinker';
+
+		// consonant label
+		var consonantLabel = "Medeklinkers";
+		if(iConsonants == 1) consonantLabel = "Medeklinker";
 
 		// results
 		return (
@@ -25,16 +36,21 @@ const CharacterCount = React.createClass({
 				<h2>Je typte...</h2>
 				<div className="stats characterCount">
 					{/* Number of vowels */}
-					<div className="stat vowelCount">
-						<span className="count">{this.props.characters.iVowelCount}</span>
-						<h3>Klinkers</h3>
-					</div>
+					<figure className="stat vowelCount">
+						
+						<h3>
+							<output className="count">{iVowels}</output>
+							{vowelLabel}
+						</h3>
+					</figure>
 
 					{/* Number of consonants */}
-					<div className="stat consonantCount">
-						<span className="count">{this.props.characters.iConsonantCount}</span>
-						<h3>Medeklinkers</h3>
-					</div>
+					<figure className="stat consonantCount">
+						<h3>
+							<output className="count">{iConsonants}</output>
+							{consonantLabel}
+						</h3>
+					</figure>
 				</div>
 			</div>
 		);

@@ -4,7 +4,7 @@
 	width: 100%;
 
 	.stat {
-		background-color: #b690c3;
+		background-color: $secondary-color;
 		border: $border-width solid black;
 		color: black;
 		font-weight: bold;
@@ -24,6 +24,7 @@
 			font-size: 6em;
 			font-weight: bold;
 			line-height: 1;
+			margin-bottom: 6px;
 		}
 
 		.character {
@@ -37,7 +38,7 @@
 	}
 
 	// tablets and desktops: flex box
-	@media screen and (min-width: $screen-phone){
+	@media screen and (min-width: $screen-xs){
 		display: flex;
 		justify-content: space-between;
 
