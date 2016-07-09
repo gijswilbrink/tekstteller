@@ -23,7 +23,7 @@ const CharacterCount = React.createClass({
 		return (
 			<div>
 				<h2>Je typte...</h2>
-				<div className="stats">
+				<div className="stats characterCount">
 					{/* Number of vowels */}
 					<div className="stat vowelCount">
 						<span className="count">{this.props.characters.iVowelCount}</span>

@@ -19,7 +19,7 @@ const TopResults = React.createClass({
 		var count = result[1];
 
 		// return jsx
-		return <li key={result}><span className="character">{character}</span> <span className="amount">({count}&times; gebruikt)</span></li>;
+		return <li key={result}><span className="character">{character}</span> <span className="amount">(<span className="number">{count}</span>&times; gebruikt)</span></li>;
 	},
 
 	/**
@@ -35,7 +35,7 @@ const TopResults = React.createClass({
 		return (
 			<div>
 				<h2>Hier heb je nog wat meer statistieken</h2>
-				<div className="stats">
+				<div className="stats topResults">
 					{/* Top 3 vowels */}
 					<div className="stat vowelCount">
 						<h2>Top 3 klinkers</h2>
