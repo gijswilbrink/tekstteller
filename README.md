@@ -1,7 +1,7 @@
 # tekstteller
 App die alle klinkers en medeklinkers in een textarea telt.
 
-Je vindt een werkende versie op http://www.gijswilbrink.nl/tesktteller
+Je vindt een werkende versie op http://gijswilbrink.nl.v33152.occhio.nl/tekstteller/
 
 ## Lokaal installeren (ook voor het testscript)
 <pre>
