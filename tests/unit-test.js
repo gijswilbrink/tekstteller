@@ -14,20 +14,29 @@
 		// wait until the textarea was loaded
 		casper.waitForSelector('main.textCounter', function() {
 			
-			// assert that stats aren't immediately shown
+			/**
+			 * assert that stats aren't immediately shown
+			 */
 			casper.test.begin('Vóór tekstinvoer: stats verborgen', 1, function(test) {
+				// check if stats exists
 				test.assertDoesntExist('.stats');
+
+				// test done
 	    		test.done();
 			});
 
 			// set testing text with special characters (36 vowels and 58 consonants)
 			var testText = 'Jemand mußte Josef K. verleumdet haben, denn ohne daß er etwas Böses getan hätte, wurde er eines Morgenns verhaftet.';
 			
-			// enter text 				
+			/**
+			 * enter text 				
+			 */
 			casper.sendKeys('textarea', testText);
 			casper.echo('===Ingevoerde tekst in textarea: ' + testText);
 
-	    	// assert that stats are shown after entering test
+	    	/**
+			 * assert that stats are shown after entering test
+			 */
 			casper.test.begin('Na tekstinvoer: stats getoond', 1, function(test) {
 				// check if stats exists
 				test.assertExists('.stats');
@@ -36,7 +45,9 @@
 				test.done();
 			});
 
-			// check vowels and consonants
+			/**
+			 * check vowels and consonants
+			 */
 			casper.test.begin('Test vowels en consonants', 2, function(test) {
 
 				// check vowels and consonants
@@ -51,7 +62,9 @@
 				test.done();
 			});
 
-			// assert that stats are shown after entering test
+			/**
+			 * assert that stats are shown after entering test
+			 */
 			casper.test.begin('Test Top 3 resultaten', 12, function(test) {
 				// function for testing Top 3 results
 				function TestTopResults(type, aResults) {
