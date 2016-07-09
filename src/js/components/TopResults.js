@@ -34,7 +34,7 @@ const TopResults = React.createClass({
 		// results
 		return (
 			<div>
-				<h2>En hier nog wat meer statistieken</h2>
+				<h2>Hier heb je nog wat meer statistieken</h2>
 				<div className="stats">
 					{/* Top 3 vowels */}
 					<div className="stat vowelCount">
