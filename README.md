@@ -7,6 +7,10 @@ Je vindt een werkende versie op http://www.gijswilbrink.nl/tekstteller/
 <pre>
 # Repos klonen
 git clone https://github.com/gijswilbrink/tekstteller.git
+# Dependencies installeren
+npm install
+# Build versie compileren
+git build
 </pre>
 
 ## Testen met CasperJS
