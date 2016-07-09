@@ -9,10 +9,10 @@
 
 	// get title
 	casper.then(function() {
-	    this.echo('===Titel van de pagina: ' + this.getTitle());
+	    this.echo('===Pagina geladen: ' + this.getTitle());
 	
 		// wait until the textarea was loaded
-		casper.waitForSelector('textarea', function() {
+		casper.waitForSelector('main.textCounter', function() {
 			
 			// assert that stats aren't immediately shown
 			casper.test.begin('Vóór tekstinvoer: stats verborgen', 1, function(test) {
