@@ -24,6 +24,7 @@ const buffer              = require('vinyl-buffer');
 const historyApiFallback  = require('connect-history-api-fallback');
 const browserSync         = require('browser-sync');
 const imagemin            = require('gulp-imagemin');
+const casperJs            = require('gulp-casperjs');
 
 /**
  * Paths to project folders
@@ -177,6 +178,13 @@ gulp.task('build:php', function() {
   return browserSync.reload();
 });
 
+/**
+ * Testing with CasperJs
+ */
+gulp.task('test', function () {
+  gulp.src('tests/unit-test.js')
+    .pipe(casperJs()); //run casperjs test 
+});
 /************************************************
  * MAIN TASKS
  ************************************************/
