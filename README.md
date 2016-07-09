@@ -7,9 +7,6 @@ Je vindt een werkende versie op http://www.gijswilbrink.nl/tesktteller
 <pre>
 # Repos klonen
 git clone https://github.com/gijswilbrink/tekstteller.git
-
-# Build versie bouwen
-gulp build
 </pre>
 
 ## Testen met CasperJS
