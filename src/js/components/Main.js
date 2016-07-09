@@ -27,6 +27,9 @@ const Main = React.createClass({
 					<CharacterCount {...this.props} />
 					<TopResults {...this.props} />
 				</section>
+      			<footer>
+        			<h3>Door <a href="mailto:gijs@gijswilbrink.nl">Gijs Wilbrink</a></h3>
+      			</footer>
 			</main>
 		);
 	}
