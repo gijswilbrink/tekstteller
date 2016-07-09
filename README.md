@@ -1,12 +1,16 @@
 # tekstteller
 App die alle klinkers en medeklinkers in een textarea telt.
 
-Je vindt een werkende versie op http://gijswilbrink.nl.v33152.occhio.nl/tekstteller/
+Je vindt een werkende versie op http://www.gijswilbrink.nl/tekstteller/
 
 ## Lokaal installeren (ook voor het testscript)
 <pre>
 # Repos klonen
 git clone https://github.com/gijswilbrink/tekstteller.git
+# Dependencies installeren
+npm install
+# Build versie compileren
+git build
 </pre>
 
 ## Testen met CasperJS
